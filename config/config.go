@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"os"
 )
 
 type Reader interface {
@@ -25,14 +26,12 @@ var (
 	systemConf   = SystemConf
 )
 
-// SetConfigPath 设置配置目录
-func SetConfigPath(path string) {
-	srunConf = fmt.Sprintf("%s/srun.conf", path)
-	systemConf = fmt.Sprintf("%s/system.conf", path)
-}
-
 // GetConfig 获取配置
-func GetConfig() (*Config, error) {
+func GetConfig(path string) (*Config, error) {
+	if mode := os.Getenv("mode"); mode != "prod" {
+		srunConf = fmt.Sprintf("%s/srun.conf", path)
+		systemConf = fmt.Sprintf("%s/system.conf", path)
+	}
 	if globalConfig != nil {
 		return globalConfig, nil
 	}
