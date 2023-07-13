@@ -1,8 +1,8 @@
 package config
 
 import (
+	"flag"
 	"fmt"
-	"os"
 )
 
 type Reader interface {
@@ -28,7 +28,9 @@ var (
 
 // GetConfig 获取配置
 func GetConfig(path string) (*Config, error) {
-	if mode := os.Getenv("mode"); mode != "prod" {
+	mode := flag.String("mode", "prod", "")
+	flag.Parse()
+	if *mode != "prod" {
 		srunConf = fmt.Sprintf("%s/srun.conf", path)
 		systemConf = fmt.Sprintf("%s/system.conf", path)
 	}
