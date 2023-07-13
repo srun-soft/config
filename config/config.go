@@ -1,7 +1,6 @@
 package config
 
 import (
-	"flag"
 	"fmt"
 )
 
@@ -27,10 +26,8 @@ var (
 )
 
 // GetConfig 获取配置
-func GetConfig(path string) (*Config, error) {
-	mode := flag.String("mode", "prod", "")
-	flag.Parse()
-	if *mode != "prod" {
+func GetConfig(path, mode string) (*Config, error) {
+	if mode != "prod" {
 		srunConf = fmt.Sprintf("%s/srun.conf", path)
 		systemConf = fmt.Sprintf("%s/system.conf", path)
 	}
