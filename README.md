@@ -9,7 +9,7 @@ Config 包提供了从 srun.conf 和 system.conf 文件中读取和管理配置�
 
 使用以下命令安装包：
 ```shell
-go get -u github.com/yourusername/config
+go get -u github.com/Eros-Vertigo/srun4-config
 ```
 使用方法
 
@@ -18,7 +18,7 @@ go get -u github.com/yourusername/config
 import (
 "fmt"
 
-    "github.com/yourusername/config"
+    "github.com/Eros-Vertigo/srun4-config"
 )
 ```
 初始化
@@ -58,7 +58,7 @@ package main
 import (
 "fmt"
 
-    "github.com/yourusername/config"
+    "github.com/Eros-Vertigo/srun4-config"
 )
 
 func main() {
