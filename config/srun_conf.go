@@ -39,4 +39,5 @@ type SrunConfig struct {
 	StatisticsTcpPort   string `ini:"statistics_tcp_port"`
 	StatisticsHttpPort  string `ini:"statistics_http_port"`
 	StatisticsMysqlPort string `ini:"statistics_mysql_port"`
+	InterfaceIp	    string `ini:"interface_ip"`
 }
