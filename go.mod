@@ -1,4 +1,4 @@
-module github.com/Eros-Vertigo/srun4-config
+module github.com/srun-soft/config
 
 go 1.19
 
