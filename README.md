@@ -16,8 +16,7 @@ go get -u github.com/srun-soft/config
 在你的 Go 代码中导入该包：
 ```go
 import (
-"fmt"
-
+    "fmt"
     "github.com/srun-soft/config"
 )
 ```
@@ -34,8 +33,8 @@ import (
 ```go
 config, err := config.GetConfig("")
 if err != nil {
-fmt.Printf("获取配置失败：%v\n", err)
-return
+    fmt.Printf("获取配置失败：%v\n", err)
+    return
 }
 ```
 GetConfig() 函数将返回一个 Config 结构体，其中包含加载的配置。
@@ -55,13 +54,12 @@ fmt.Println("System OnlineServer：", config.SystemConfig.OnlineServer)
 package main
 
 import (
-"fmt"
-
+    "fmt"
     "github.com/srun-soft/config"
 )
 
 func main() {
-// 设置配置文件目录路径
+    // 设置配置文件目录路径
     // 获取配置
     config, err := config.GetConfig("")
     if err != nil {
