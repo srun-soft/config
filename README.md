@@ -9,7 +9,7 @@ Config 包提供了从 srun.conf 和 system.conf 文件中读取和管理配置�
 
 使用以下命令安装包：
 ```shell
-go get -u github.com/Eros-Vertigo/srun4-config
+go get -u github.com/srun-soft/config
 ```
 使用方法
 
@@ -18,7 +18,7 @@ go get -u github.com/Eros-Vertigo/srun4-config
 import (
 "fmt"
 
-    "github.com/Eros-Vertigo/srun4-config"
+    "github.com/srun-soft/config"
 )
 ```
 初始化
@@ -44,8 +44,8 @@ GetConfig() 函数将返回一个 Config 结构体，其中包含加载的配置
 
 一旦获得 Config 结构体，可以使用点符号访问各个配置值。例如：
 ```go
-fmt.Println("Srun 用户名：", config.SrunConfig.Username)
-fmt.Println("System 在线服务器：", config.SystemConfig.OnlineServer)
+fmt.Println("Srun Username：", config.SrunConfig.Username)
+fmt.Println("System OnlineServer：", config.SystemConfig.OnlineServer)
 ```
 
 示例
@@ -57,7 +57,7 @@ package main
 import (
 "fmt"
 
-    "github.com/Eros-Vertigo/srun4-config"
+    "github.com/srun-soft/config"
 )
 
 func main() {
